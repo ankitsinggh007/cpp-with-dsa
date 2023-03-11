@@ -18,7 +18,7 @@
 // }
 // ////////////////////////////////
 // 2Q find factorial of n?
-  #include <iostream>
+/*  #include <iostream>
 using namespace std;
 
 int main (){
@@ -41,4 +41,11 @@ int main (){
     cout<<"answer"<<endl<<0;
   }
   }
+*/
+// #include <iostream>
+// using namespace std;
 
+// int main(){
+//   int a=20;
+// cout<<sizeof(a);
+// }
