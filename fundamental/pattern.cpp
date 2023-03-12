@@ -51,18 +51,33 @@ using namespace std;
 
 //   }
 // Q6 print 1 to n in row like 1st row contain 1 second roe contain 1 2 third
-int main() {
+// int main() {
+//   int n;
+
+//   cout << "provide no. " << endl;
+//   cin >> n;
+//   int k = 1;
+//   int j = 1;
+//   for (int i = 1; j <= n; i++) {
+//     for (int row = 0; row < i && j <= n; row++, j++) {
+
+//       cout << j << " ";
+//     }
+//     cout << endl;
+//   }
+// }
+// Q6 print 1 to n in row like 1st row contain 1 second roe contain 2 3 third 3 4 5;
+int main(){
   int n;
+  cout<<"Provide me a no."<<endl;
+  cin>>n;
 
-  cout << "provide no. " << endl;
-  cin >> n;
-  int k = 1;
-  int j = 1;
-  for (int i = 1; j <= n; i++) {
-    for (int row = 0; row < i && j <= n; row++, j++) {
+  for(int row=1;row<=n;row++){
+        int n =row;
 
-      cout << j << " ";
-    }
-    cout << endl;
+    for(int col=row; n>=1;n--,col++){
+      cout<<col<<" ";
+     }
+    cout<<endl;
   }
 }
