@@ -33,21 +33,36 @@ using namespace std;
 // }
 // Q5 print 1 to n in row like 1st row contain 1 second roe contain 2 2 third
 // row contain 3 3 3 and so on
-int main() { 
-  cout << "Provide me one no."<< endl; 
-  int n;
-  cin>>n;
-  
-  if(n<=0){
-    cout<<"provide value greater than 0 "<<endl;
-    return 0;
-  }
-    for(int i=1;i<=n;i++){
-      for(int j=1;j<=i;j++){
-        cout<<i<<" ";
-      }
-      cout<<endl;
-    }
+// int main() {
+//   cout << "Provide me one no."<< endl;
+//   int n;
+//   cin>>n;
 
-  
+//   if(n<=0){
+//     cout<<"provide value greater than 0 "<<endl;
+//     return 0;
+//   }
+//     for(int i=1;i<=n;i++){
+//       for(int j=1;j<=i;j++){
+//         cout<<i<<" ";
+//       }
+//       cout<<endl;
+//     }
+
+//   }
+// Q6 print 1 to n in row like 1st row contain 1 second roe contain 1 2 third
+int main() {
+  int n;
+
+  cout << "provide no. " << endl;
+  cin >> n;
+  int k = 1;
+  int j = 1;
+  for (int i = 1; j <= n; i++) {
+    for (int row = 0; row < i && j <= n; row++, j++) {
+
+      cout << j << " ";
+    }
+    cout << endl;
   }
+}
