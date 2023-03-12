@@ -17,17 +17,37 @@ using namespace std;
 //   }
 // }
 // 4Q print star's in right-angle triangle formate
-int main() {
+// int main() {
 
+//   int n;
+//   cin >> n;
+
+//   for (int i = 0; i < n; i++) {
+//     for (int j = 0; j <= i; j++) {
+
+//       cout << "*"
+//            << " ";
+//     }
+//     cout << endl;
+//   }
+// }
+// Q5 print 1 to n in row like 1st row contain 1 second roe contain 2 2 third
+// row contain 3 3 3 and so on
+int main() { 
+  cout << "Provide me one no."<< endl; 
   int n;
-  cin >> n;
-
-  for (int i = 0; i < n; i++) {
-    for (int j = 0; j <= i; j++) {
-
-      cout << "*"
-           << " ";
-    }
-    cout << endl;
+  cin>>n;
+  
+  if(n<=0){
+    cout<<"provide value greater than 0 "<<endl;
+    return 0;
   }
-}
+    for(int i=1;i<=n;i++){
+      for(int j=1;j<=i;j++){
+        cout<<i<<" ";
+      }
+      cout<<endl;
+    }
+
+  
+  }

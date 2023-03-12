@@ -42,10 +42,10 @@ int main (){
   }
   }
 */
-// #include <iostream>
-// using namespace std;
+#include <iostream>
+using namespace std;
 
-// int main(){
-//   int a=20;
-// cout<<sizeof(a);
-// }
+int main(){
+  int a=20;
+cout<<sizeof(a);
+}
