@@ -67,17 +67,32 @@ using namespace std;
 //   }
 // }
 // Q6 print 1 to n in row like 1st row contain 1 second roe contain 2 3 third 3 4 5;
+// int main(){
+//   int n;
+//   cout<<"Provide me a no."<<endl;
+//   cin>>n;
+
+//   for(int row=1;row<=n;row++){
+//         int n =row;
+
+//     for(int col=row; n>=1;n--,col++){
+//       cout<<col<<" ";
+//      }
+//     cout<<endl;
+//   }
+// }
+// Q7 print 1 t0 n in row like 1st row 1 and second 2 1 and so on
 int main(){
   int n;
-  cout<<"Provide me a no."<<endl;
+  cout<<"provide positive no."<<endl;
   cin>>n;
 
   for(int row=1;row<=n;row++){
-        int n =row;
 
-    for(int col=row; n>=1;n--,col++){
+    for(int col=row;col>=1;col--){
       cout<<col<<" ";
-     }
+    }
     cout<<endl;
   }
+  cout<<"end";
 }
