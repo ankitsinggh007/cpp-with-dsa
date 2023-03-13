@@ -31,18 +31,18 @@ using namespace std;
 
 // Q9 Convert decimal into binary
 
-int main() {
+// int main() {
 
-  int n;
-  cin >> n;
-  int answer = 0;
-  int i = 0;
-  while (n > 0) {
-    int dig = n % 2;
-    answer = dig * pow(10, i) +answer;
+//   int n;
+//   cin >> n;
+//   int answer = 0;
+//   int i = 0;
+//   while (n > 0) {
+//     int dig = n % 2;
+//     answer = dig * pow(10, i) +answer;
       
-      n = n / 2;
-    i++;
-  }
-  cout<<answer;
-}
+//       n = n / 2;
+//     i++;
+//   }
+//   cout<<answer;
+// }
