@@ -66,8 +66,8 @@ using namespace std;
 //     cout << endl;
 //   }
 // }
-// Q6 print 1 to n in row like 1st row contain 1 second roe contain 2 3 third 3 4 5;
-// int main(){
+// Q6 print 1 to n in row like 1st row contain 1 second roe contain 2 3 third 3
+// 4 5; int main(){
 //   int n;
 //   cout<<"Provide me a no."<<endl;
 //   cin>>n;
@@ -82,17 +82,17 @@ using namespace std;
 //   }
 // }
 // Q7 print 1 t0 n in row like 1st row 1 and second 2 1 and so on
-int main(){
-  int n;
-  cout<<"provide positive no."<<endl;
-  cin>>n;
+// int main(){
+//   int n;
+//   cout<<"provide positive no."<<endl;
+//   cin>>n;
 
-  for(int row=1;row<=n;row++){
+//   for(int row=1;row<=n;row++){
 
-    for(int col=row;col>=1;col--){
-      cout<<col<<" ";
-    }
-    cout<<endl;
-  }
-  cout<<"end";
-}
+//     for(int col=row;col>=1;col--){
+//       cout<<col<<" ";
+//     }
+//     cout<<endl;
+//   }
+//   cout<<"end";
+// }
