@@ -1,4 +1,5 @@
-# include <iostream>
+#include <iostream>
+#include <math.h>
 using namespace std;
 
 // int main( ){
@@ -11,21 +12,37 @@ using namespace std;
 // }
 
 // print fibonnaci no. upto n;
-int main(){
-  int fistValue=0;
-  int secondValue=1;
-  cout<<"provide no. "<<endl;
+// int main(){
+//   int fistValue=0;
+//   int secondValue=1;
+//   cout<<"provide no. "<<endl;
+//   int n;
+//   cin>>n;
+//   int sum=0;
+//   for( int i=0,j=1,k=0;k<=n;k++){
+
+//       cout<<i<<" ";
+//       sum=i+j;
+//       i=j;
+//       j=sum;
+
+//   }
+// }
+
+// Q9 Convert decimal into binary
+
+int main() {
+
   int n;
-  cin>>n;
-  int sum=0;
-  for( int i=0,j=1,k=0;k<=n;k++){
-
+  cin >> n;
+  int answer = 0;
+  int i = 0;
+  while (n > 0) {
+    int dig = n % 2;
+    answer = dig * pow(10, i) +answer;
       
-      cout<<i<<" ";
-      sum=i+j;
-      i=j;
-      j=sum;
-
-    
+      n = n / 2;
+    i++;
   }
+  cout<<answer;
 }
