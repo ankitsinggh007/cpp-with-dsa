@@ -23,23 +23,56 @@
 //         return ans;
 //     }
 // };
-// Given an integer n, return true if it is a power of two. Otherwise, return false.
+// Given an integer n, return true if it is a power of two. Otherwise, return
+// false.
 
-// An integer n is a power of two, if there exists an integer x such that n == 2x.
+// An integer n is a power of two, if there exists an integer x such that n ==
+// 2x. class Solution { public:
+//     bool isPowerOfTwo(int n) {
+//         if(n<=0) return false;
+
+// while(n!=0){
+
+//     if(!(n&1){
+//         return false;
+//     }
+//     n=n>>1;
+
+// }
+// return true;
+
+//     }
+// };
+// The complement of an integer is the integer you get when you flip all the 0's to 1's and all the 1's to 0's in its binary representation.
+
+// For example, The integer 5 is "101" in binary and its complement is "010" which is the integer 2.
+// Given an integer n, return its complement.
 class Solution {
 public:
-    bool isPowerOfTwo(int n) {
-        if(n<=0) return false;
+    int bitwiseComplement(int n) {
 
-while(n!=0){
+if(n==0) return 1;
 
-    if(!(n&1){
-        return false;
-    }
-    n=n>>1;
-    
-}
-return true;
-        
-    }
+    int mask=0,x=n,count=0;
+            while(x!=0){
+
+                count++;
+                
+                x=x>>1;
+
+
+            }
+            // return count;
+            int j=0;
+            while(count>=1){
+                mask=mask<<1;
+
+                mask=mask|1;
+                count--;
+                j++;
+            }
+            return ~n&mask ;
+
+        }
 };
+
