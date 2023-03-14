@@ -43,12 +43,12 @@
 
 //     }
 // };
-// The complement of an integer is the integer you get when you flip all the 0's to 1's and all the 1's to 0's in its binary representation.
+// The complement of an integer is the integer you get when you flip all the 0's
+// to 1's and all the 1's to 0's in its binary representation.
 
-// For example, The integer 5 is "101" in binary and its complement is "010" which is the integer 2.
-// Given an integer n, return its complement.
-// class Solution {
-// public:
+// For example, The integer 5 is "101" in binary and its complement is "010"
+// which is the integer 2. Given an integer n, return its complement. class
+// Solution { public:
 //     int bitwiseComplement(int n) {
 
 // if(n==0) return 1;
@@ -57,9 +57,8 @@
 //             while(x!=0){
 
 //                 count++;
-                
-//                 x=x>>1;
 
+//                 x=x>>1;
 
 //             }
 //             // return count;
@@ -77,30 +76,66 @@
 // };
 // create calc having +/-/%///* operation can perform;
 #include <iostream>
-using namespace std; 
- 
-int main(){
+using namespace std;
 
-  int arg1,arg2;
-  char op;
-  cout<<"provide arg1,arg2,operation to be perfrom respectively "<<endl;
-cin>>arg1;  
-cin>>arg2;  
-cin>>op;
-  switch(op){
-    case '*' : cout << arg1 * arg2;
-                break;
-    case '-' : cout << arg1 - arg2;
-                break;
+// int main(){
+
+//   int arg1,arg2;
+//   char op;
+//   cout<<"provide arg1,arg2,operation to be perfrom respectively "<<endl;
+// cin>>arg1;
+// cin>>arg2;
+// cin>>op;
+//   switch(op){
+//     case '*' : cout << arg1 * arg2;
+//                 break;
+//     case '-' : cout << arg1 - arg2;
+//                 break;
+
+//     case '+' : cout << arg1 + arg2;
+//                 break;
+
+//     case '/' : cout << arg1 / arg2;
+//                 break;
+
+//     case '%' : cout << arg1 % arg2;
+//                 break;
+//   default:cout<<"provide correct operation";
+//     }
+// }
+// reverse an array based on given array;
+void getValue(int array[], int size) {
+
+  for (int i = 0; i < size; i++) {
+
+    cin >> array[i];
+  }
+  return;
+}
+void reverse(int aray[],int size){
+  for(int i=0,j=size-1;i<size/2 ||j>size/2;i++,j--){
+    int temp=aray[i];
+  // cout<<temp;
+
+    aray[i]=aray[j];
+    aray[j]=temp;
     
-    case '+' : cout << arg1 + arg2;
-                break;
     
-    case '/' : cout << arg1 / arg2;
-                break;
-    
-    case '%' : cout << arg1 % arg2;
-                break;
-  default:cout<<"provide correct operation";
-    }
+  }
+  return;
+}
+int main() {
+  int size;
+  cout << "How many elemnt will you give" << endl;
+  cin >> size;
+  int givenArray[size];
+  cout << "Provide" << endl;
+  getValue(givenArray, size);
+for (int i = 0; i < size; i++) {
+    cout << givenArray[i] << " ";
+  }
+  reverse(givenArray,size);
+  for (int i = 0; i < size; i++) {
+    cout << givenArray[i] << " ";
+  }
 }
