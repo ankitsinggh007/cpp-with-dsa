@@ -47,32 +47,60 @@
 
 // For example, The integer 5 is "101" in binary and its complement is "010" which is the integer 2.
 // Given an integer n, return its complement.
-class Solution {
-public:
-    int bitwiseComplement(int n) {
+// class Solution {
+// public:
+//     int bitwiseComplement(int n) {
 
-if(n==0) return 1;
+// if(n==0) return 1;
 
-    int mask=0,x=n,count=0;
-            while(x!=0){
+//     int mask=0,x=n,count=0;
+//             while(x!=0){
 
-                count++;
+//                 count++;
                 
-                x=x>>1;
+//                 x=x>>1;
 
 
-            }
-            // return count;
-            int j=0;
-            while(count>=1){
-                mask=mask<<1;
+//             }
+//             // return count;
+//             int j=0;
+//             while(count>=1){
+//                 mask=mask<<1;
 
-                mask=mask|1;
-                count--;
-                j++;
-            }
-            return ~n&mask ;
+//                 mask=mask|1;
+//                 count--;
+//                 j++;
+//             }
+//             return ~n&mask ;
 
-        }
-};
+//         }
+// };
+// create calc having +/-/%///* operation can perform;
+#include <iostream>
+using namespace std; 
+ 
+// int main(){
 
+//   int arg1,arg2;
+//   char op;
+//   cout<<"provide arg1,arg2,operation to be perfrom respectively "<<endl;
+// cin>>arg1;  
+// cin>>arg2;  
+// cin>>op;
+//   switch(op){
+//     case '*' : cout << arg1 * arg2;
+//                 break;
+//     case '-' : cout << arg1 - arg2;
+//                 break;
+    
+//     case '+' : cout << arg1 + arg2;
+//                 break;
+    
+//     case '/' : cout << arg1 / arg2;
+//                 break;
+    
+//     case '%' : cout << arg1 % arg2;
+//                 break;
+//   default:cout<<"provide correct operation";
+//     }
+// }
