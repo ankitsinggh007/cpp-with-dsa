@@ -104,6 +104,40 @@ using namespace std;
 //     }
 // }
 // reverse an array based on given array;
+// void getValue(int array[], int size) {
+
+//   for (int i = 0; i < size; i++) {
+
+//     cin >> array[i];
+//   }
+//   return;
+// }
+// void reverse(int aray[],int size){
+//   for(int i=0,j=size-1;i<size/2 ||j>size/2;i++,j--){
+//     int temp=aray[i];
+//   // cout<<temp;
+
+//     aray[i]=aray[j];
+//     aray[j]=temp;
+
+//   }
+//   return;
+// }
+// int main() {
+//   int size;
+//   cout << "How many elemnt will you give" << endl;
+//   cin >> size;
+//   int givenArray[size];
+//   cout << "Provide" << endl;
+//   getValue(givenArray, size);
+// for (int i = 0; i < size; i++) {
+//     cout << givenArray[i] << " ";
+//   }
+//   reverse(givenArray,size);
+//   for (int i = 0; i < size; i++) {
+//     cout << givenArray[i] << " ";
+//   }
+// }
 void getValue(int array[], int size) {
 
   for (int i = 0; i < size; i++) {
@@ -112,30 +146,36 @@ void getValue(int array[], int size) {
   }
   return;
 }
-void reverse(int aray[],int size){
-  for(int i=0,j=size-1;i<size/2 ||j>size/2;i++,j--){
-    int temp=aray[i];
-  // cout<<temp;
+  void printArray(int array[],int size){
+    for (int i = 0; i < size; i++) {
+    cout << array[i] << " ";
+  }
+  }
 
-    aray[i]=aray[j];
-    aray[j]=temp;
-    
+  void swapAlternate(int array[],int size){
+
+    for(int i=0;i<size-1;i+=2){
+      int temp=array[i];
+      array[i]=array[i+1];
+      array[i+1]=temp;
+      
+      
+    }
     
   }
-  return;
-}
-int main() {
+// swap alternate;
+ 
+int main(){
   int size;
   cout << "How many elemnt will you give" << endl;
   cin >> size;
   int givenArray[size];
   cout << "Provide" << endl;
   getValue(givenArray, size);
-for (int i = 0; i < size; i++) {
-    cout << givenArray[i] << " ";
-  }
-  reverse(givenArray,size);
-  for (int i = 0; i < size; i++) {
-    cout << givenArray[i] << " ";
-  }
+
+  printArray(givenArray,size);
+  cout<<endl;
+  swapAlternate(givenArray,size);
+  printArray(givenArray,size);
+  
 }
