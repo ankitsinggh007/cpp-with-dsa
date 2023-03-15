@@ -185,23 +185,62 @@ void swapAlternate(int array[], int size) {
 //   return ans;
 
 // }
-#include <bits/stdc++.h>
-vector<int> findArrayIntersection(vector<int> &arr1, int n, vector<int> &arr2,
-                                  int m) {
+// #include <bits/stdc++.h>
+// vector<int> findArrayIntersection(vector<int> &arr1, int n, vector<int> &arr2,
+//                                   int m) {
 
-  vector<int> answer;
+//   vector<int> answer;
 
-  int i = 0, j = 0;
-  while (i < n && j < m) {
-    if (arr1[i] < arr2[j]) {
-      i++;
-    } else if (arr1[i] > arr2[j]) {
-      j++;
-    } else if (arr1[i] == arr2[j]) {
-      answer.push_back(arr1[i]);
-      i++;
-      j++;
+//   int i = 0, j = 0;
+//   while (i < n && j < m) {
+//     if (arr1[i] < arr2[j]) {
+//       i++;
+//     } else if (arr1[i] > arr2[j]) {
+//       j++;
+//     } else if (arr1[i] == arr2[j]) {
+//       answer.push_back(arr1[i]);
+//       i++;
+//       j++;
+//     }
+//   }
+//   return answer;
+// }
+
+// Implement binary search and find is k present or not
+int findNumber(int arr[],int size,int k){
+
+  int start=0;
+  int end=size-1;
+  while(start<=end){
+    int mid=(start+end)/2 ;
+    if(arr[mid]==k){
+      return mid;
+    }
+    else if(arr[mid]>k){
+      end=mid-1;
+    }
+    else if(arr[mid]<k){
+      start=mid+1;
     }
   }
-  return answer;
+  return -1;
+  
+}
+int main(){
+ int size;
+  cout << "How many elemnt will you give" << endl;
+  cin >> size;
+  int givenArray[size];
+  cout << "Provide" << endl;
+  getValue(givenArray, size);
+cout<<"Wich no. to be found"<<endl;
+  int k ;
+  cin>>k;
+  printArray(givenArray,size);
+  cout<<k;
+  int j=findNumber(givenArray,size,k);
+  
+cout<<j;
+  
+  
 }
