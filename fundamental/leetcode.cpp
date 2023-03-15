@@ -146,36 +146,62 @@ void getValue(int array[], int size) {
   }
   return;
 }
-  void printArray(int array[],int size){
-    for (int i = 0; i < size; i++) {
+void printArray(int array[], int size) {
+  for (int i = 0; i < size; i++) {
     cout << array[i] << " ";
   }
-  }
+}
 
-  void swapAlternate(int array[],int size){
+void swapAlternate(int array[], int size) {
 
-    for(int i=0;i<size-1;i+=2){
-      int temp=array[i];
-      array[i]=array[i+1];
-      array[i+1]=temp;
-      
-      
-    }
-    
+  for (int i = 0; i < size - 1; i += 2) {
+    int temp = array[i];
+    array[i] = array[i + 1];
+    array[i + 1] = temp;
   }
+}
 // swap alternate;
- 
-int main(){
-  int size;
-  cout << "How many elemnt will you give" << endl;
-  cin >> size;
-  int givenArray[size];
-  cout << "Provide" << endl;
-  getValue(givenArray, size);
 
-  printArray(givenArray,size);
-  cout<<endl;
-  swapAlternate(givenArray,size);
-  printArray(givenArray,size);
-  
+// int main() {
+//   int size;
+//   cout << "How many elemnt will you give" << endl;
+//   cin >> size;
+//   int givenArray[size];
+//   cout << "Provide" << endl;
+//   getValue(givenArray, size);
+
+//   printArray(givenArray, size);
+//   cout << endl;
+//   swapAlternate(givenArray, size);
+//   printArray(givenArray, size);
+// }
+// int findDuplicate(vector<int> &arr)
+// {
+//   int N=arr.size()-1;
+//   int ans=0;
+//   for(int i=0,j=0;i<=N;i++,j++){
+//     ans=ans^arr[i]^j;
+//   }
+//   return ans;
+
+// }
+#include <bits/stdc++.h>
+vector<int> findArrayIntersection(vector<int> &arr1, int n, vector<int> &arr2,
+                                  int m) {
+
+  vector<int> answer;
+
+  int i = 0, j = 0;
+  while (i < n && j < m) {
+    if (arr1[i] < arr2[j]) {
+      i++;
+    } else if (arr1[i] > arr2[j]) {
+      j++;
+    } else if (arr1[i] == arr2[j]) {
+      answer.push_back(arr1[i]);
+      i++;
+      j++;
+    }
+  }
+  return answer;
 }
