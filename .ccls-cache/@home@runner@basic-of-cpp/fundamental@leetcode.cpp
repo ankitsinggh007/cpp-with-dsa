@@ -186,7 +186,8 @@ void swapAlternate(int array[], int size) {
 
 // }
 // #include <bits/stdc++.h>
-// vector<int> findArrayIntersection(vector<int> &arr1, int n, vector<int> &arr2,
+// vector<int> findArrayIntersection(vector<int> &arr1, int n, vector<int>
+// &arr2,
 //                                   int m) {
 
 //   vector<int> answer;
@@ -224,7 +225,7 @@ void swapAlternate(int array[], int size) {
 //     }
 //   }
 //   return -1;
-  
+
 // }
 // int main(){
 //  int size;
@@ -239,65 +240,80 @@ void swapAlternate(int array[], int size) {
 //   printArray(givenArray,size);
 //   cout<<k;
 //   int j=findNumber(givenArray,size,k);
-  
+
 // cout<<j;
-  
-  
+
 // }
-int firstOccurense(int arr[],int size,int k){
+// int firstOccurense(int arr[], int size, int k) {
 
-  int first=-1;
-int start=0,end=size-1;
-      while(start<=end){
+//   int first = -1;
+//   int start = 0, end = size - 1;
+//   while (start <= end) {
 
-        int mid=(start+end)/2 ;
-        if(arr[mid]==k){
-          first=mid;
-          start=0;
-          end=mid-1; 
-        }
-        else if(arr[mid]>k){
-          end=mid-1;
-        }
-        else if(arr[mid]<k){
-          start=mid+1;
-        }
-      }
-  return first;
+//     int mid = (start + end) / 2;
+//     if (arr[mid] == k) {
+//       first = mid;
+//       start = 0;
+//       end = mid - 1;
+//     } else if (arr[mid] > k) {
+//       end = mid - 1;
+//     } else if (arr[mid] < k) {
+//       start = mid + 1;
+//     }
+//   }
+//   return first;
+// }
+// int secondOccurense(int arr[], int size, int k) {
+
+//   int first = -1;
+//   int start = 0, end = size - 1;
+//   while (start <= end) {
+
+//     int mid = (start + end) / 2;
+//     if (arr[mid] == k) {
+//       first = mid;
+//       start = 0;
+//       start = mid + 1;
+//     } else if (arr[mid] > k) {
+//       end = mid - 1;
+//     } else if (arr[mid] < k) {
+//       start = mid + 1;
+//     }
+//   }
+//   return first;
+// }
+int main() {
+
+  int size;
+  cout << "How many elemnt will you give" << endl;
+  cin >> size;
+  int givenArray[size];
+  cout << "Provide" << endl;
+  getValue(givenArray, size);
+  cout << "Wich no. to be found" << endl;
+  int k;
+  cin >> k;
+  printArray(givenArray ,size);
 }
-int secondOccurense(int arr[],int size,int k){
-
-  int first=-1;
-int start=0,end=size-1;
-      while(start<=end){
-
-        int mid=(start+end)/2 ;
-        if(arr[mid]==k){
-          first=mid;
-          start=0;
-        start=mid+1; 
+class Solution {
+public:
+    int mySqrt(int x) {
+        
+        int s=0,e=x;
+        int mid=-1;
+        while(s<=e){
+            int mid=s+(e-s)/2 ;
+            
+            if(pow(mid,2)==x){
+                return mid;
+            }
+            else if(pow(mid,2)>x){
+                e=mid-1;
+            }
+            else if(pow(mid,2)<x){
+                s=mid+1;
+            }
         }
-        else if(arr[mid]>k){
-          end=mid-1;
-        }
-        else if(arr[mid]<k){
-          start=mid+1;
-        }
-      }
-  return first;
-}
-int main (){
-
-   int size;
-    cout << "How many elemnt will you give" << endl;
-    cin >> size;
-    int givenArray[size];
-    cout << "Provide" << endl;
-    getValue(givenArray, size);
-    cout<<"Wich no. to be found"<<endl;
-    int k ;
-    cin>>k;
-  int first=firstOccurense(givenArray,size,k);
-  int second=secondOccurense(givenArray,size,k);
-  cout<<first<<" "<<second;
-}
+        return e;
+    }
+};
