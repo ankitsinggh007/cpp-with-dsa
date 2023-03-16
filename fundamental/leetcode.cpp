@@ -207,40 +207,97 @@ void swapAlternate(int array[], int size) {
 // }
 
 // Implement binary search and find is k present or not
-int findNumber(int arr[],int size,int k){
+// int findNumber(int arr[],int size,int k){
 
-  int start=0;
-  int end=size-1;
-  while(start<=end){
-    int mid=(start+end)/2 ;
-    if(arr[mid]==k){
-      return mid;
-    }
-    else if(arr[mid]>k){
-      end=mid-1;
-    }
-    else if(arr[mid]<k){
-      start=mid+1;
-    }
-  }
-  return -1;
+//   int start=0;
+//   int end=size-1;
+//   while(start<=end){
+//     int mid=(start+end)/2 ;
+//     if(arr[mid]==k){
+//       return mid;
+//     }
+//     else if(arr[mid]>k){
+//       end=mid-1;
+//     }
+//     else if(arr[mid]<k){
+//       start=mid+1;
+//     }
+//   }
+//   return -1;
   
+// }
+// int main(){
+//  int size;
+//   cout << "How many elemnt will you give" << endl;
+//   cin >> size;
+//   int givenArray[size];
+//   cout << "Provide" << endl;
+//   getValue(givenArray, size);
+// cout<<"Wich no. to be found"<<endl;
+//   int k ;
+//   cin>>k;
+//   printArray(givenArray,size);
+//   cout<<k;
+//   int j=findNumber(givenArray,size,k);
+  
+// cout<<j;
+  
+  
+// }
+int firstOccurense(int arr[],int size,int k){
+
+  int first=-1;
+int start=0,end=size-1;
+      while(start<=end){
+
+        int mid=(start+end)/2 ;
+        if(arr[mid]==k){
+          first=mid;
+          start=0;
+          end=mid-1; 
+        }
+        else if(arr[mid]>k){
+          end=mid-1;
+        }
+        else if(arr[mid]<k){
+          start=mid+1;
+        }
+      }
+  return first;
 }
-int main(){
- int size;
-  cout << "How many elemnt will you give" << endl;
-  cin >> size;
-  int givenArray[size];
-  cout << "Provide" << endl;
-  getValue(givenArray, size);
-cout<<"Wich no. to be found"<<endl;
-  int k ;
-  cin>>k;
-  printArray(givenArray,size);
-  cout<<k;
-  int j=findNumber(givenArray,size,k);
-  
-cout<<j;
-  
-  
+int secondOccurense(int arr[],int size,int k){
+
+  int first=-1;
+int start=0,end=size-1;
+      while(start<=end){
+
+        int mid=(start+end)/2 ;
+        if(arr[mid]==k){
+          first=mid;
+          start=0;
+        start=mid+1; 
+        }
+        else if(arr[mid]>k){
+          end=mid-1;
+        }
+        else if(arr[mid]<k){
+          start=mid+1;
+        }
+      }
+  return first;
+}
+int main (){
+
+   int size;
+    cout << "How many elemnt will you give" << endl;
+    cin >> size;
+    int givenArray[size];
+    cout << "Provide" << endl;
+    getValue(givenArray, size);
+    cout<<"Wich no. to be found"<<endl;
+    int k ;
+    cin>>k;
+  int first=firstOccurense(givenArray,size,k);
+  int second=secondOccurense(givenArray,size,k);
+  cout<<first<<" "<<second;
 }
