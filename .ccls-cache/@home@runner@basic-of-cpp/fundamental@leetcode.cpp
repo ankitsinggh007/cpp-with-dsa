@@ -138,28 +138,28 @@ using namespace std;
 //     cout << givenArray[i] << " ";
 //   }
 // }
-void getValue(int array[], int size) {
+// void getValue(int array[], int size) {
 
-  for (int i = 0; i < size; i++) {
+//   for (int i = 0; i < size; i++) {
 
-    cin >> array[i];
-  }
-  return;
-}
-void printArray(int array[], int size) {
-  for (int i = 0; i < size; i++) {
-    cout << array[i] << " ";
-  }
-}
+//     cin >> array[i];
+//   }
+//   return;
+// }
+// void printArray(int array[], int size) {
+//   for (int i = 0; i < size; i++) {
+//     cout << array[i] << " ";
+//   }
+// }
 
-void swapAlternate(int array[], int size) {
+// void swapAlternate(int array[], int size) {
 
-  for (int i = 0; i < size - 1; i += 2) {
-    int temp = array[i];
-    array[i] = array[i + 1];
-    array[i + 1] = temp;
-  }
-}
+//   for (int i = 0; i < size - 1; i += 2) {
+//     int temp = array[i];
+//     array[i] = array[i + 1];
+//     array[i + 1] = temp;
+//   }
+// }
 // swap alternate;
 
 // int main() {
@@ -282,38 +282,49 @@ void swapAlternate(int array[], int size) {
 //   }
 //   return first;
 // }
-int main() {
+// int main() {
 
-  int size;
-  cout << "How many elemnt will you give" << endl;
-  cin >> size;
-  int givenArray[size];
-  cout << "Provide" << endl;
-  getValue(givenArray, size);
-  cout << "Wich no. to be found" << endl;
-  int k;
-  cin >> k;
-  printArray(givenArray ,size);
+//   int size;
+//   cout << "How many elemnt will you give" << endl;
+//   cin >> size;
+//   int givenArray[size];
+//   cout << "Provide" << endl;
+//   getValue(givenArray, size);
+//   cout << "Wich no. to be found" << endl;
+//   int k;
+//   cin >> k;
+//   printArray(givenArray, size);
+// }
+// class Solution {
+// public:
+//   int mySqrt(int x) {
+
+//     int s = 0, e = x;
+//     int mid = -1;
+//     while (s <= e) {
+//       int mid = s + (e - s) / 2;
+
+//       if (pow(mid, 2) == x) {
+//         return mid;
+//       } else if (pow(mid, 2) > x) {
+//         e = mid - 1;
+//       } else if (pow(mid, 2) < x) {
+//         s = mid + 1;
+//       }
+//     }
+//     return e;
+//   }
+// };
+void getValue(int array[], int size) {
+
+  for (int i = 0; i < size; i++) {
+
+    cin >> array[i];
+  }
+  return;
 }
-class Solution {
-public:
-    int mySqrt(int x) {
-        
-        int s=0,e=x;
-        int mid=-1;
-        while(s<=e){
-            int mid=s+(e-s)/2 ;
-            
-            if(pow(mid,2)==x){
-                return mid;
-            }
-            else if(pow(mid,2)>x){
-                e=mid-1;
-            }
-            else if(pow(mid,2)<x){
-                s=mid+1;
-            }
-        }
-        return e;
-    }
-};
+void printArray(int array[], int size) {
+  for (int i = 0; i < size; i++) {
+    cout << array[i] << " ";
+  }
+}
