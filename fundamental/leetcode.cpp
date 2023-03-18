@@ -426,41 +426,56 @@ int sumOfArray(int arr[], int size) {
   }
   return sum;
 }
-void selectionSort(int arr[],int size){
-  
-  for(int i=0;i<size;i++){
-    int minIndex=i;
-    for(int j=i+1;j<size;j++){
+// void selectionSort(int arr[],int size){
 
-      if(arr[minIndex]>arr[j]){
-        minIndex=j;
-      }
-      
-    }
-    swap(arr[minIndex],arr[i]);
-  }
-}
-void bubbleSort(int arr[],int size){
-  int s=size;
-  while(s>=0){
-    for(int i=0;i<size-1;i++){
-      if(arr[i]>arr[i+1]){
-        swap(arr[i],arr[i+1]);
-      }
-  }
-    s--;
-  }
-}
-int main(){
+//   for(int i=0;i<size;i++){
+//     int minIndex=i;
+//     for(int j=i+1;j<size;j++){
 
-  int size;
-  cout << "How many book are there " << endl;
-  cin >> size;
-  int givenArray[size];
-  cout << "Provide no. of pages respectively" << endl;
-  getValue(givenArray, size);
-  printArray(givenArray, size);
-  bubbleSort(givenArray,size);
-  printArray(givenArray, size);
-  
-  }
+//       if(arr[minIndex]>arr[j]){
+//         minIndex=j;
+//       }
+
+//     }
+//     swap(arr[minIndex],arr[i]);
+//   }
+// }
+// void bubbleSort(int arr[],int size){
+//   int s=size;
+//   while(s>=0){
+//     for(int i=0;i<size-1;i++){
+//       if(arr[i]>arr[i+1]){
+//         swap(arr[i],arr[i+1]);
+//       }
+//   }
+//     s--;
+//   }
+// }
+// int main(){
+
+//   int size;
+//   cout << "How many book are there " << endl;
+//   cin >> size;
+//   int givenArray[size];
+//   cout << "Provide no. of pages respectively" << endl;
+//   getValue(givenArray, size);
+//   printArray(givenArray, size);
+//   bubbleSort(givenArray,size);
+//   printArray(givenArray, size);
+
+//   }
+#include <bits/stdc++.h> 
+void reverseArray(vector<int> &arr , int m)
+{
+	
+	int arra[arr.size()-m-1];
+	int j=arr.size()-m-1-1;
+	for(int i=m+1;i<arr.size();i++){
+		arra[j--]=arr[i];
+	}
+	int k=0;
+	for(int i=m+1;i<arr.size();i++){
+		arr[i]=arra[k++];
+	}
+
+}
