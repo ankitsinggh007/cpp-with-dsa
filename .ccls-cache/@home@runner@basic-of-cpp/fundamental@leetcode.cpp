@@ -315,6 +315,94 @@ using namespace std;
 //     return e;
 //   }
 // };
+
+// pair<bool,int> allocateBook(int arr[],int size,int mid,int student){
+//           // there could be three cases can be generated
+//           // 1.student left-->mid should be decrease;
+//           // 2.books left-->mid should be increase;
+//           // 3 books allocated succesfully->save mid ;
+
+// }
+// int bookAllocation(int arr[],int size,int student){
+// int sum=sumOfArray(arr, size);
+//   int s=0,e=sum;
+//   while(s<=e){
+
+//     int mid=s+(e-s)/2 ;
+
+//     pair<bool,int> allocated=allocateBook(arr,size,mid,student);
+
+//   }
+
+// }
+
+// int main(){
+
+//   int size;
+//   cout << "How many book are there " << endl;
+//   cin >> size;
+//   int givenArray[size];
+//   cout << "Provide no. of pages respectively" << endl;
+//   getValue(givenArray, size);
+//   cout << "no. of student to be allocated" << endl;
+//   int k;
+//   cin >> k;
+
+//    cout<<bookAllocation(givenArray,size,k);
+// }
+// // book allocation
+// #include <bits/stdc++.h>
+
+// bool isPossibleSolution(vector<int> &pages, int n, int b,int mid){
+
+// 			int sum=0;
+// 			int student=1;
+// 	for(int i=0;i<n;i++){
+
+// 		if(sum+pages[i]<=mid){
+// 			sum=sum+pages[i];
+// 		}
+
+// 		else {
+// 			student++;
+// 			if(student>b|| pages[i]>mid){
+// 				return false;
+// 			}
+// 			sum=pages[i];
+// 		}
+
+// 	}
+// 		return true;
+
+// }
+
+// int allocateBooks(vector<int> &pages, int n, int b)
+// {
+// 	int s=0;
+// 	int sum=0;
+// 	for(int i=0;i<n;i++){
+// 		sum=sum+pages[i];
+// 	}
+// 	int e=sum;
+// 	int ans=-1;
+// 		if(n<b){
+// 			return -1;
+// 		}
+// 	while(s<=e){
+
+// 		int mid=s+(e-s)/2 ;
+// 		if(isPossibleSolution(pages,n,b,mid)){
+// 			ans=mid;
+// 			e=mid-1;
+// 		}
+// 		else{
+// 			s=mid+1;
+// 		}
+
+// 	}
+// 	return ans;
+
+// }
 void getValue(int array[], int size) {
 
   for (int i = 0; i < size; i++) {
@@ -328,109 +416,51 @@ void printArray(int array[], int size) {
     cout << array[i] << " ";
   }
 }
-int sumOfArray(int arr[],int size){
+int sumOfArray(int arr[], int size) {
 
-  int sum=0;
-  
-  while(size>=1){
-    sum=arr[size-1]+sum;
+  int sum = 0;
+
+  while (size >= 1) {
+    sum = arr[size - 1] + sum;
     size--;
-    
   }
   return sum;
 }
-pair<bool,int> allocateBook(int arr[],int size,int mid,int student){
-          // there could be three cases can be generated
-          // 1.student left-->mid should be decrease;
-          // 2.books left-->mid should be increase;
-          // 3 books allocated succesfully->save mid ;
-          
-          
-
+void selectionSort(int arr[],int size){
   
-}
-int bookAllocation(int arr[],int size,int student){
-int sum=sumOfArray(arr, size);
-  int s=0,e=sum;
-  while(s<=e){
+  for(int i=0;i<size;i++){
+    int minIndex=i;
+    for(int j=i+1;j<size;j++){
 
-    int mid=s+(e-s)/2 ;
-
-    pair<bool,int> allocated=allocateBook(arr,size,mid,student);
-    
-  }
+      if(arr[minIndex]>arr[j]){
+        minIndex=j;
+      }
       
-
-
-
-  
+    }
+    swap(arr[minIndex],arr[i]);
+  }
 }
-
+void bubbleSort(int arr[],int size){
+  int s=size;
+  while(s>=0){
+    for(int i=0;i<size-1;i++){
+      if(arr[i]>arr[i+1]){
+        swap(arr[i],arr[i+1]);
+      }
+  }
+    s--;
+  }
+}
 int main(){
 
-  
   int size;
   cout << "How many book are there " << endl;
   cin >> size;
   int givenArray[size];
   cout << "Provide no. of pages respectively" << endl;
   getValue(givenArray, size);
-  cout << "no. of student to be allocated" << endl;
-  int k;
-  cin >> k;
-
-   cout<<bookAllocation(givenArray,size,k);
-}
-// book allocation 
-#include <bits/stdc++.h> 
-
-bool isPossibleSolution(vector<int> &pages, int n, int b,int mid){
-
-			int sum=0;
-			int student=1;
-	for(int i=0;i<n;i++){
-			
-		if(sum+pages[i]<=mid){
-			sum=sum+pages[i];
-		}
-
-		else {
-			student++;
-			if(student>b|| pages[i]>mid){
-				return false;
-			}
-			sum=pages[i];
-		}
-
-	}
-		return true;
-
-}
-
-int allocateBooks(vector<int> &pages, int n, int b)
-{
-	int s=0;
-	int sum=0;
-	for(int i=0;i<n;i++){
-		sum=sum+pages[i];
-	}
-	int e=sum;
-	int ans=-1;
-		if(n<b){
-			return -1;
-		}
-	while(s<=e){
-
-		int mid=s+(e-s)/2 ;
-		if(isPossibleSolution(pages,n,b,mid)){
-			ans=mid;
-			e=mid-1;
-		}
-		else{
-			s=mid+1;
-		}
-		
-	}
-	return ans;
-	
-}
+  printArray(givenArray, size);
+  bubbleSort(givenArray,size);
+  printArray(givenArray, size);
+  
+  }
