@@ -481,6 +481,26 @@ void pushZerosAtEnd(int arr[], int size)
     arr[i]=0;
   }
 }
+ void rotate(int arr[],int size, int k) {
+    for(int i=size-k-1,j=size-1;i<=j;i++,j--){
+
+      swap(arr[i],arr[j]);
+    }
+   for(int i=k-1;i>=0;i--){
+        int j=i;
+     int temp=arr[i];
+     for(j;j<size-1;j++){
+
+       arr[j]=arr[j+1];
+       
+     }
+     arr[j]=temp;
+     size--;
+   }
+
+    
+   
+    }
 int main() {
 
   int size;
@@ -489,8 +509,12 @@ int main() {
   int givenArray[size];
   cout << "Provide no. of pages respectively" << endl;
   getValue(givenArray, size);
+  int k;
+  cout<<"Provide no.";
+  cin>>k;
   printArray(givenArray, size);
-  pushZerosAtEnd(givenArray, size);
+  // pushZerosAtEnd(givenArray, size);
+  rotate(givenArray,size,k);
   cout<<endl;
   printArray(givenArray, size);
 }
