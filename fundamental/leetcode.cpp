@@ -518,20 +518,20 @@ void pushZerosAtEnd(int arr[], int size)
 //   cout<<endl;
 //   printArray(givenArray, size);
 // }
-class Solution {
-public:
-    void rotate(vector<int>& arr, int k) {
-   vector<int> temp(arr.size());
-   for(int i=0;i<arr.size();i++){
+// class Solution {
+// public:
+//     void rotate(vector<int>& arr, int k) {
+//    vector<int> temp(arr.size());
+//    for(int i=0;i<arr.size();i++){
 
-       int mal=(i+k)%arr.size();
-       temp[mal]=arr[i];
+//        int mal=(i+k)%arr.size();
+//        temp[mal]=arr[i];
 
-   }
-   arr=temp;
-    }
-};
-#include <bits/stdc++.h>
+//    }
+//    arr=temp;
+//     }
+// };
+// #include <bits/stdc++.h>
 // void reverseArray(vector<int> &arr , int m)
 // {
 
@@ -546,3 +546,28 @@ public:
 // 	}
 
 // }
+void Reverse(char ch[],int n){
+  int s=0;
+  int e=n-1;
+  while(s<=e){
+    swap(ch[s++],ch[e--]);
+  }
+}
+int Length(char ch[]){
+  int count=0;
+  for(int i=0;ch[i]!='\0';i++){
+    count++;
+  }
+  return count;
+}
+int main(){
+  char name[10];
+  cout<<"Provide you're name";
+  cin>>name;
+  int n=Length(name);
+  cout<<"hi,how are you "<<name<<endl;
+  Reverse(name,n);
+  cout<<" reverse of you're input is "<<name;
+  
+  
+}

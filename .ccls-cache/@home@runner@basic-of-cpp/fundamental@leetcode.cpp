@@ -481,20 +481,57 @@ void pushZerosAtEnd(int arr[], int size)
     arr[i]=0;
   }
 }
-int main() {
+ void rotate(int arr[],int size, int k) {
+    for(int i=size-k-1,j=size-1;i<=j;i++,j--){
 
-  int size;
-  cout << "How many book are there " << endl;
-  cin >> size;
-  int givenArray[size];
-  cout << "Provide no. of pages respectively" << endl;
-  getValue(givenArray, size);
-  printArray(givenArray, size);
-  pushZerosAtEnd(givenArray, size);
-  cout<<endl
-  printArray(givenArray, size);
-}
-#include <bits/stdc++.h>
+      swap(arr[i],arr[j]);
+    }
+   for(int i=k-1;i>=0;i--){
+        int j=i;
+     int temp=arr[i];
+     for(j;j<size-1;j++){
+
+       arr[j]=arr[j+1];
+       
+     }
+     arr[j]=temp;
+     size--;
+   }
+
+    
+   
+    }
+// int main() {
+
+//   int size;
+//   cout << "How many book are there " << endl;
+//   cin >> size;
+//   int givenArray[size];
+//   cout << "Provide no. of pages respectively" << endl;
+//   getValue(givenArray, size);
+//   int k;
+//   cout<<"Provide no.";
+//   cin>>k;
+//   printArray(givenArray, size);
+//   // pushZerosAtEnd(givenArray, size);
+//   rotate(givenArray,size,k);
+//   cout<<endl;
+//   printArray(givenArray, size);
+// }
+// class Solution {
+// public:
+//     void rotate(vector<int>& arr, int k) {
+//    vector<int> temp(arr.size());
+//    for(int i=0;i<arr.size();i++){
+
+//        int mal=(i+k)%arr.size();
+//        temp[mal]=arr[i];
+
+//    }
+//    arr=temp;
+//     }
+// };
+// #include <bits/stdc++.h>
 // void reverseArray(vector<int> &arr , int m)
 // {
 
@@ -509,3 +546,28 @@ int main() {
 // 	}
 
 // }
+void Reverse(char ch[],int n){
+  int s=0;
+  int e=n-1;
+  while(s<=e){
+    swap(ch[s++],ch[e--]);
+  }
+}
+int Length(char ch[]){
+  int count=0;
+  for(int i=0;ch[i]!='\0';i++){
+    count++;
+  }
+  return count;
+}
+int main(){
+  char name[10];
+  cout<<"Provide you're name";
+  cin>>name;
+  int n=Length(name);
+  cout<<"hi,how are you "<<name<<endl;
+  Reverse(name,n);
+  cout<<" reverse of you're input is "<<name;
+  
+  
+}
