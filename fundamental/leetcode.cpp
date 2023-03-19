@@ -501,23 +501,36 @@ void pushZerosAtEnd(int arr[], int size)
     
    
     }
-int main() {
+// int main() {
 
-  int size;
-  cout << "How many book are there " << endl;
-  cin >> size;
-  int givenArray[size];
-  cout << "Provide no. of pages respectively" << endl;
-  getValue(givenArray, size);
-  int k;
-  cout<<"Provide no.";
-  cin>>k;
-  printArray(givenArray, size);
-  // pushZerosAtEnd(givenArray, size);
-  rotate(givenArray,size,k);
-  cout<<endl;
-  printArray(givenArray, size);
-}
+//   int size;
+//   cout << "How many book are there " << endl;
+//   cin >> size;
+//   int givenArray[size];
+//   cout << "Provide no. of pages respectively" << endl;
+//   getValue(givenArray, size);
+//   int k;
+//   cout<<"Provide no.";
+//   cin>>k;
+//   printArray(givenArray, size);
+//   // pushZerosAtEnd(givenArray, size);
+//   rotate(givenArray,size,k);
+//   cout<<endl;
+//   printArray(givenArray, size);
+// }
+class Solution {
+public:
+    void rotate(vector<int>& arr, int k) {
+   vector<int> temp(arr.size());
+   for(int i=0;i<arr.size();i++){
+
+       int mal=(i+k)%arr.size();
+       temp[mal]=arr[i];
+
+   }
+   arr=temp;
+    }
+};
 #include <bits/stdc++.h>
 // void reverseArray(vector<int> &arr , int m)
 // {
