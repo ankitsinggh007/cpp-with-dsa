@@ -403,29 +403,29 @@ using namespace std;
 // 	return ans;
 
 // }
-void getValue(int array[], int size) {
+// void getValue(int array[], int size) {
 
-  for (int i = 0; i < size; i++) {
+//   for (int i = 0; i < size; i++) {
 
-    cin >> array[i];
-  }
-  return;
-}
-void printArray(int array[], int size) {
-  for (int i = 0; i < size; i++) {
-    cout << array[i] << " ";
-  }
-}
-int sumOfArray(int arr[], int size) {
+//     cin >> array[i];
+//   }
+//   return;
+// }
+// void printArray(int array[], int size) {
+//   for (int i = 0; i < size; i++) {
+//     cout << array[i] << " ";
+//   }
+// }
+// int sumOfArray(int arr[], int size) {
 
-  int sum = 0;
+//   int sum = 0;
 
-  while (size >= 1) {
-    sum = arr[size - 1] + sum;
-    size--;
-  }
-  return sum;
-}
+//   while (size >= 1) {
+//     sum = arr[size - 1] + sum;
+//     size--;
+//   }
+//   return sum;
+// }
 // void selectionSort(int arr[],int size){
 
 //   for(int i=0;i<size;i++){
@@ -451,31 +451,61 @@ int sumOfArray(int arr[], int size) {
 //     s--;
 //   }
 // }
-// int main(){
+void getValue(int array[], int size) {
 
-//   int size;
-//   cout << "How many book are there " << endl;
-//   cin >> size;
-//   int givenArray[size];
-//   cout << "Provide no. of pages respectively" << endl;
-//   getValue(givenArray, size);
-//   printArray(givenArray, size);
-//   bubbleSort(givenArray,size);
-//   printArray(givenArray, size);
+  for (int i = 0; i < size; i++) {
 
-//   }
-#include <bits/stdc++.h> 
-void reverseArray(vector<int> &arr , int m)
-{
-	
-	int arra[arr.size()-m-1];
-	int j=arr.size()-m-1-1;
-	for(int i=m+1;i<arr.size();i++){
-		arra[j--]=arr[i];
-	}
-	int k=0;
-	for(int i=m+1;i<arr.size();i++){
-		arr[i]=arra[k++];
-	}
-
+    cin >> array[i];
+  }
+  return;
 }
+void printArray(int array[], int size) {
+  for (int i = 0; i < size; i++) {
+    cout << array[i] << " ";
+  }
+} 
+
+void pushZerosAtEnd(int arr[], int size)
+{
+  
+  int count=0;
+  for(int i=0;i<size;i++){
+    if(arr[i]==0){
+      count++;
+    }
+    else if(arr[i]!=0){
+      arr[i-count]=arr[i];
+    }
+  }
+  for(int i=size-count;i<size;i++){
+    arr[i]=0;
+  }
+}
+int main() {
+
+  int size;
+  cout << "How many book are there " << endl;
+  cin >> size;
+  int givenArray[size];
+  cout << "Provide no. of pages respectively" << endl;
+  getValue(givenArray, size);
+  printArray(givenArray, size);
+  pushZerosAtEnd(givenArray, size);
+  cout<<endl
+  printArray(givenArray, size);
+}
+#include <bits/stdc++.h>
+// void reverseArray(vector<int> &arr , int m)
+// {
+
+// 	int arra[arr.size()-m-1];
+// 	int j=arr.size()-m-1-1;
+// 	for(int i=m+1;i<arr.size();i++){
+// 		arra[j--]=arr[i];
+// 	}
+// 	int k=0;
+// 	for(int i=m+1;i<arr.size();i++){
+// 		arr[i]=arra[k++];
+// 	}
+
+// }
