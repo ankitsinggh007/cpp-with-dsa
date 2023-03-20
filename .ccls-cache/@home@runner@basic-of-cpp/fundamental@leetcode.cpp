@@ -566,29 +566,40 @@
 //   cout<<" reverse of you're input is "<<name;
 
 // }
-#include <iostream>
+// #include <iostream>
 
-using namespace std;
-bool isPalindrome(string &s) {
-  int start=0;
-  int e=s.length()-1;
-  while(start<=e){
-      if(s[start++]!=s[e--]){
-        return false;
-      }
-  }
-  return true;
-}
-void printString(string &s) { cout << s; }
-int main() {
-  cout << "Provide string" << endl;
-  string s;
-  cin >> s;
-  printString(s);
-  cout<<endl;
-  if (isPalindrome(s)) {
-    cout << "yes it is palindrome";
-  } else {
-    cout << "no it is not palindrome";
-  }
-}
+// using namespace std;
+// bool isPalindrome(string &s) {
+//   int start=0;
+//   int e=s.length()-1;
+//   while(start<=e){
+//       if(s[start++]!=s[e--]){
+//         return false;
+//       }
+//   }
+//   return true;
+// }
+// void printString(string &s) { cout << s; }
+// int main() {
+//   cout << "Provide string" << endl;
+//   string s;
+//   cin >> s;
+//   printString(s);
+//   cout<<endl;
+//   if (isPalindrome(s)) {
+//     cout << "yes it is palindrome";
+//   } else {
+//     cout << "no it is not palindrome";
+//   }
+// }
+// class Solution {
+// public:
+//     string removeOccurrences(string s, string part) {
+        
+//        while(s.length()>=0 && s.find(part)<s.length()){
+//            s.erase(s.find(part),part.length());
+//        }
+//     return s;
+
+//     }
+// };
