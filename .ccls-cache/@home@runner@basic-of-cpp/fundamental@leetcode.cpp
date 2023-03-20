@@ -603,3 +603,47 @@
 
 //     }
 // };
+class Solution {
+    private:
+    
+    
+    bool compare(int arr[],int arr1[]){
+        for(int i=0;i<26;i++){
+            if(arr[i]!=arr1[i]){
+                return false;
+            }
+        }
+        return true;
+    }
+
+
+
+public:
+
+
+    bool checkInclusion(string s1, string s2) {
+        
+        int count[26]={0};
+
+        for(int i=0;i<s1.length();i++){
+            int a=s1[i]-'a';
+            count[a]++;
+        }
+        int windowlength=s1.length()-1;
+    
+        for(int i=0;i+windowlength<s2.length();i++){
+            int j=i+windowlength;
+                int count1[26]={0};
+                int starting=i;
+            while(starting<=j){
+                int a=s2[starting]-'a';
+                count1[a]++;
+                starting++;
+            }
+            if(compare(count,count1)){
+                    return true;
+            }
+        }
+        return false;
+    }
+};
