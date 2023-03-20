@@ -75,8 +75,6 @@
 //         }
 // };
 // create calc having +/-/%///* operation can perform;
-#include <iostream>
-using namespace std;
 
 // int main(){
 
@@ -451,56 +449,54 @@ using namespace std;
 //     s--;
 //   }
 // }
-void getValue(int array[], int size) {
+// void getValue(int array[], int size) {
 
-  for (int i = 0; i < size; i++) {
+//   for (int i = 0; i < size; i++) {
 
-    cin >> array[i];
-  }
-  return;
-}
-void printArray(int array[], int size) {
-  for (int i = 0; i < size; i++) {
-    cout << array[i] << " ";
-  }
-} 
+//     cin >> array[i];
+//   }
+//   return;
+// }
+// void printArray(int array[], int size) {
+//   for (int i = 0; i < size; i++) {
+//     cout << array[i] << " ";
+//   }
+// }
 
-void pushZerosAtEnd(int arr[], int size)
-{
-  
-  int count=0;
-  for(int i=0;i<size;i++){
-    if(arr[i]==0){
-      count++;
-    }
-    else if(arr[i]!=0){
-      arr[i-count]=arr[i];
-    }
-  }
-  for(int i=size-count;i<size;i++){
-    arr[i]=0;
-  }
-}
- void rotate(int arr[],int size, int k) {
-    for(int i=size-k-1,j=size-1;i<=j;i++,j--){
+// void pushZerosAtEnd(int arr[], int size)
+// {
 
-      swap(arr[i],arr[j]);
-    }
-   for(int i=k-1;i>=0;i--){
-        int j=i;
-     int temp=arr[i];
-     for(j;j<size-1;j++){
+//   int count=0;
+//   for(int i=0;i<size;i++){
+//     if(arr[i]==0){
+//       count++;
+//     }
+//     else if(arr[i]!=0){
+//       arr[i-count]=arr[i];
+//     }
+//   }
+//   for(int i=size-count;i<size;i++){
+//     arr[i]=0;
+//   }
+// }
+//  void rotate(int arr[],int size, int k) {
+//     for(int i=size-k-1,j=size-1;i<=j;i++,j--){
 
-       arr[j]=arr[j+1];
-       
-     }
-     arr[j]=temp;
-     size--;
-   }
+//       swap(arr[i],arr[j]);
+//     }
+//    for(int i=k-1;i>=0;i--){
+//         int j=i;
+//      int temp=arr[i];
+//      for(j;j<size-1;j++){
 
-    
-   
-    }
+//        arr[j]=arr[j+1];
+
+//      }
+//      arr[j]=temp;
+//      size--;
+//    }
+
+//     }
 // int main() {
 
 //   int size;
@@ -546,28 +542,53 @@ void pushZerosAtEnd(int arr[], int size)
 // 	}
 
 // }
-void Reverse(char ch[],int n){
-  int s=0;
-  int e=n-1;
-  while(s<=e){
-    swap(ch[s++],ch[e--]);
+// void Reverse(char ch[],int n){
+//   int s=0;
+//   int e=n-1;
+//   while(s<=e){
+//     swap(ch[s++],ch[e--]);
+//   }
+// }
+// int Length(char ch[]){
+//   int count=0;
+//   for(int i=0;ch[i]!='\0';i++){
+//     count++;
+//   }
+//   return count;
+// }
+// int main(){
+//   char name[10];
+//   cout<<"Provide you're name";
+//   cin>>name;
+//   int n=Length(name);
+//   cout<<"hi,how are you "<<name<<endl;
+//   Reverse(name,n);
+//   cout<<" reverse of you're input is "<<name;
+
+// }
+#include <iostream>
+
+using namespace std;
+bool isPalindrome(string &s) {
+  int start=0;
+  int e=s.length()-1;
+  while(start<=e){
+      if(s[start++]!=s[e--]){
+        return false;
+      }
   }
+  return true;
 }
-int Length(char ch[]){
-  int count=0;
-  for(int i=0;ch[i]!='\0';i++){
-    count++;
+void printString(string &s) { cout << s; }
+int main() {
+  cout << "Provide string" << endl;
+  string s;
+  cin >> s;
+  printString(s);
+  cout<<endl;
+  if (isPalindrome(s)) {
+    cout << "yes it is palindrome";
+  } else {
+    cout << "no it is not palindrome";
   }
-  return count;
-}
-int main(){
-  char name[10];
-  cout<<"Provide you're name";
-  cin>>name;
-  int n=Length(name);
-  cout<<"hi,how are you "<<name<<endl;
-  Reverse(name,n);
-  cout<<" reverse of you're input is "<<name;
-  
-  
 }
