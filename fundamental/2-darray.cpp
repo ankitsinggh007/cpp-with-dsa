@@ -16,31 +16,28 @@ void printArray(int arr[][4],int row,int col){
     cout<<endl;
   }
 }
-bool findElement(int arr[][4],int row,int col,int m){
-
-    for(int i=0;i<row;i++){
-      for(int j=0;j<col;j++){
-        if(m==arr[i][j]){
-          return true;
-        }
-      }
+void largestRowSum(int arr[][4],int row,int col){
+  pair<int,int>temp;
+  for(int i=0;i<row;i++){
+    int sum=0;
+    for(int j=0;j<col;j++){
+      sum+=arr[i][j];
     }
-  return false;
+    if(temp.first<sum){
+      temp.first=sum;
+      temp.second=i;
+    }
+  }
+  cout<<"this row have maximum sum"<<temp.second;
 }
 int main(){
 
-  cout<<"provide me a size of row the col will alway's be same"<<endl;
+  cout<<"provide me a size of row the col will alway's be same"  <<endl;
   int row;
   cin>>row;
   int arr[row][4];
   getValue(arr,row,4);
-  cout<<"wih value you want me to find"<<endl;
-  
-  int m;
-  cin>>m;
+  cout<<endl;
   printArray(arr,row,4);
-  if(findElement(arr,row,4,m)){
-    cout<<"Yes it is present";
-  }
-  else cout<<"No it's not present";
+  largestRowSum(arr,row,4);
 }
