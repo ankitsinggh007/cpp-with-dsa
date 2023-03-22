@@ -1,5 +1,5 @@
-#include <iostream>
-using namespace std;
+// #include <iostream>
+// using namespace std;
 // 3Q print patter for n such that it goes from 1 to n in +x and +y direction
 // int main() {
 

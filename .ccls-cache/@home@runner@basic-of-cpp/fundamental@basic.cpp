@@ -1,15 +1,32 @@
-// #include <iostream>
-// using namespace std;
+#include <bits/stdc++.h>
 
-// int main() {
+using namespace std;
+int gcd(int a, int ans) {
+  cout << "passed value" << a << " " << ans;
+  int sum = max(a, ans) % min(a, ans);
+  while (sum != 0) {
+    sum = sum % min(a, ans);
+  }
+  return sum;
+}
+int advancedGcd(int a, string b) {
 
-//   cout << "provide me a no. and i will giv you a sum of it" << endl;
+  int ans = 0;
+  cout << b << " " << stoi(b);
+  for (int i = b.size() - 1, j = 0; i >= 0; i--, j++) {
+    ans = b[i] * pow(10, j);
+  }
+  // return ans;
+  return gcd(a, ans);
+}
 
-//   int a, b;
-//   cout << "input first arg" << endl;
-//   cin >> a;
-//   cout << "input second arg" << endl;
-//   cin >> b;
-//   cout << "sum of provided arg is " << a + b << endl;
-//   return 0;
-// }
+int main() {
+
+  cout << "provide me a no. and i will giv you a sum of it" << endl;
+
+  int a;
+  cin >> a;
+  string s;
+  cin >> s;
+  int j = advancedGcd(a, s);
+}
