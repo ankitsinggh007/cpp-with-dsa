@@ -31,5 +31,11 @@ int main() {
   // cout<<factorial(n)<<endl;
   // cout << Exponant(n, i) << endl;
   // PrintCount(n);
-  cout<<PrintFibonacci(n);
+  // cout<<PrintFibonacci(n);
+  // #include <bits/stdc++.h> 
+
+int countDistinctWays(int nStairs) {
+    if(nStairs==1||nStairs==2) return nStairs  ;
+    return countDistinctWays(nStairs-1)+countDistinctWays(nStairs-2);
+}
 }
