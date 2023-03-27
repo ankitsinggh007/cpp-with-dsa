@@ -44,7 +44,8 @@
 // }
 // }
 // write a recursive function to return sumof given no. digit
-
+// Write a recursive function to find the greatest common divisor (GCD) of two numbers
+// Write a recursive function to print all the permutations of a string
 #include<iostream>
 using namespace std;
 
@@ -54,9 +55,16 @@ int SUmOfDigit(int n){
   n=n/10;
   return SUmOfDigit(n)+temp;
 }
+int GCD(int n,int m){
+  if(n==0)return m;
+  if(m==0)return n;
+  if(m>=n)return GCD(m%n,n);
+  else return GCD(m,n%m);
+}
 int main(){
 
-  int n;
-  cin>>n;
- cout<< SUmOfDigit(n);
+  int n,m;
+  cin>>n>>m;
+ // cout<< SUmOfDigit(n,m);
+  cout<<GCD(m,n);
 }
