@@ -14,10 +14,17 @@ int Exponant(int n, int i) {
   if(i==0) return 1;
   return n*Exponant(n,i-1);
 }
+void PrintCount(int n){
+  cout<<n;
+  
+  if(n==1) return;
+  return PrintCount(n-1);
+}
 int main() {
   int n, i;
   cout << "Provide n and i" << endl;
   cin >> n >> i;
   // cout<<factorial(n)<<endl;
-  cout << Exponant(n, i) << endl;
+  // cout << Exponant(n, i) << endl;
+  PrintCount(n);
 }
