@@ -1,41 +1,62 @@
-#include <iostream>
+// #include <iostream>
+// using namespace std;
+// // recursion
+
+// // find factorialof n?
+// int factorial(int n) {
+//   if (n == 0 || n == 1) {
+//     return 1;
+//   } else {
+//     return n * factorial(n - 1);
+//   }
+// }
+// int Exponant(int n, int i) {
+//   if (i == 0)
+//     return 1;
+//   return n * Exponant(n, i - 1);
+// }
+// void PrintCount(int n) {
+//   cout << n;
+
+//   if (n == 1)
+//     return;
+//   return PrintCount(n - 1);
+// }
+// int PrintFibonacci(int n) {
+//   if (n == 0 | n == 1)
+//     return n;
+//   else
+//     return PrintFibonacci(n - 1) + PrintFibonacci(n - 2);
+// }
+// int main() {
+//   int n, i;
+//   cout << "Provide n and i" << endl;
+//   cin >> n;
+//   /* cout<<factorial(n)<<endl;
+//    cout << Exponant(n, i) << endl;
+//    PrintCount(n);
+//    cout<<PrintFibonacci(n);
+//    #include <bits/stdc++.h>
+
+//  int countDistinctWays(int nStairs) {
+//      if(nStairs==1||nStairs==2) return nStairs  ;
+//      return countDistinctWays(nStairs-1)+countDistinctWays(nStairs-2);*/
+// }
+// }
+// write a recursive function to return sumof given no. digit
+
+#include<iostream>
 using namespace std;
-// recursion
 
-// find factorialof n?
-int factorial(int n) {
-  if (n == 0 || n == 1) {
-    return 1;
-  } else {
-    return n * factorial(n - 1);
-  }
+int SUmOfDigit(int n){
+  if(n==0)return 0;
+  int temp=n%10;
+  n=n/10;
+  return SUmOfDigit(n)+temp;
 }
-int Exponant(int n, int i) {
-  if(i==0) return 1;
-  return n*Exponant(n,i-1);
-}
-void PrintCount(int n){
-  cout<<n;
-  
-  if(n==1) return;
-  return PrintCount(n-1);
-}
-int PrintFibonacci(int n){
-  if(n==0|n==1) return n;
-  else return PrintFibonacci(n-1)+PrintFibonacci(n-2);
-}
-int main() {
-  int n, i;
-  cout << "Provide n and i" << endl;
-  cin >> n ;
-  // cout<<factorial(n)<<endl;
-  // cout << Exponant(n, i) << endl;
-  // PrintCount(n);
-  // cout<<PrintFibonacci(n);
-  // #include <bits/stdc++.h> 
+int main(){
 
-int countDistinctWays(int nStairs) {
-    if(nStairs==1||nStairs==2) return nStairs  ;
-    return countDistinctWays(nStairs-1)+countDistinctWays(nStairs-2);
-}
+  int n;
+  cin>>n;
+ cout<< SUmOfDigit(n);
 }
