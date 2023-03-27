@@ -73,6 +73,10 @@ bool isSorted(int arr[], int n) {
     return false;
   return isSorted(arr + 1, n - 1);
 }
+int SUM(int *arr,int n){
+  if(n==0) return 0;
+  return SUM(arr+1,n-1)+arr[0];
+}
 int main() {
 
   int n;
@@ -81,8 +85,7 @@ int main() {
   for (int i = 0; i < n; i++) {
     cin >> arr[i];
   }
-  cout << isSorted(arr, n);
+  cout<<SUM(arr,n);
+  // cout << isSorted(arr, n);
 
-  // cout<< SUmOfDigit(n,m);
-  // cout<<GCD(m,n);
 }
