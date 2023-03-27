@@ -44,27 +44,45 @@
 // }
 // }
 // write a recursive function to return sumof given no. digit
-// Write a recursive function to find the greatest common divisor (GCD) of two numbers
-// Write a recursive function to print all the permutations of a string
-#include<iostream>
+// Write a recursive function to find the greatest common divisor (GCD) of two
+// numbers Write a recursive function to print all the permutations of a string
+#include <iostream>
 using namespace std;
 
-int SUmOfDigit(int n){
-  if(n==0)return 0;
-  int temp=n%10;
-  n=n/10;
-  return SUmOfDigit(n)+temp;
+int SUmOfDigit(int n) {
+  if (n == 0)
+    return 0;
+  int temp = n % 10;
+  n = n / 10;
+  return SUmOfDigit(n) + temp;
 }
-int GCD(int n,int m){
-  if(n==0)return m;
-  if(m==0)return n;
-  if(m>=n)return GCD(m%n,n);
-  else return GCD(m,n%m);
+int GCD(int n, int m) {
+  if (n == 0)
+    return m;
+  if (m == 0)
+    return n;
+  if (m >= n)
+    return GCD(m % n, n);
+  else
+    return GCD(m, n % m);
 }
-int main(){
+bool isSorted(int arr[], int n) {
+  if (n == 0 || n == 1)
+    return true;
+  if (arr[0] > arr[1])
+    return false;
+  return isSorted(arr + 1, n - 1);
+}
+int main() {
 
-  int n,m;
-  cin>>n>>m;
- // cout<< SUmOfDigit(n,m);
-  cout<<GCD(m,n);
+  int n;
+  cin >> n;
+  int arr[n];
+  for (int i = 0; i < n; i++) {
+    cin >> arr[i];
+  }
+  cout << isSorted(arr, n);
+
+  // cout<< SUmOfDigit(n,m);
+  // cout<<GCD(m,n);
 }
