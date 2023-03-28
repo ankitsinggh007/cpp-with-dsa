@@ -73,9 +73,17 @@ bool isSorted(int arr[], int n) {
     return false;
   return isSorted(arr + 1, n - 1);
 }
-int SUM(int *arr,int n){
-  if(n==0) return 0;
-  return SUM(arr+1,n-1)+arr[0];
+int SUM(int *arr, int n) {
+  if (n == 0)
+    return 0;
+  return SUM(arr + 1, n - 1) + arr[0];
+}
+bool IsPresent(int *arr,int s,int e,int k) {
+  if(s>e)return false;
+  int mid=s+(e-s)/2 ;
+  if(arr[mid]==k) return true;
+  if(arr[mid]>k)return IsPresent(arr,s,mid-1,k);
+  else return IsPresent(arr,mid+1,e,k);
 }
 int main() {
 
@@ -85,7 +93,9 @@ int main() {
   for (int i = 0; i < n; i++) {
     cin >> arr[i];
   }
-  cout<<SUM(arr,n);
+  int k;
+  cin >> k;
+  cout << IsPresent(arr,0, n-1, k);
+  // cout<<SUM(arr,n);
   // cout << isSorted(arr, n);
-
 }
