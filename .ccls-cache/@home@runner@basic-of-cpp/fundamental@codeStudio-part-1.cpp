@@ -62,7 +62,7 @@
 #include <iostream>
 using namespace std;
 
-void reverse(string& s) {
+void reverse(string &s) {
 
   int i = 0;
   int j = s.size() - 1;
@@ -72,19 +72,30 @@ void reverse(string& s) {
     j--;
   }
 }
-void recursiceTwoPivot(string& s,int i,int j){
-  if(i>=j) return ;
-  swap(s[i],s[j]);
-  cout<<s<<endl;
-  recursiceTwoPivot(s,++i,--j);
+void recursiceTwoPivot(string &s, int i, int j) {
+  if (i >= j)
+    return;
+  swap(s[i], s[j]);
+  cout << s << endl;
+  recursiceTwoPivot(s, ++i, --j);
+}
+bool checkPalindrome(string& s,int i,int j){
+
+  if(i>=j) return true;
+  if(s[i]!=s[j]) return false;
+  i++;j--;
+  return checkPalindrome(s,i,j);
 }
 
 int main() {
 
-  string s = "hi my name is ankit";
+  string s = "abbccbba";
 
   // reverse(s);
-  int n=s.size()-1;
-  recursiceTwoPivot(s, 0, n);
+  int n = s.size() - 1;
+  // recursiceTwoPivot(s, 0, n);
+  cout<<checkPalindrome(s,0,n)<<endl;
   cout << "answer  " << s;
 }
+
+
