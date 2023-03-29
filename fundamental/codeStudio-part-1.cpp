@@ -81,7 +81,7 @@ void recursiceTwoPivot(string &s, int i, int j) {
 }
 bool checkPalindrome(string& s,int i,int j){
 
-  if(i>=j) return true;
+  if(i>j) return true;
   if(s[i]!=s[j]) return false;
   i++;j--;
   return checkPalindrome(s,i,j);
@@ -89,12 +89,15 @@ bool checkPalindrome(string& s,int i,int j){
 
 int main() {
 
-  string s = "abbccbba";
+  string s = "a";
 
   // reverse(s);
   int n = s.size() - 1;
   // recursiceTwoPivot(s, 0, n);
-  cout<<checkPalindrome(s,0,n)<<endl;
+  // cout<<checkPalindrome(s,0,n)<<endl;
+  int a,b;
+  cin>>a>>b;
+  cout<<a<<" "<<b;
   cout << "answer  " << s;
 }
 
