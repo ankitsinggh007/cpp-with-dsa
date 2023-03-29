@@ -79,14 +79,56 @@ void recursiceTwoPivot(string &s, int i, int j) {
   cout << s << endl;
   recursiceTwoPivot(s, ++i, --j);
 }
-bool checkPalindrome(string& s,int i,int j){
+bool checkPalindrome(string &s, int i, int j) {
 
-  if(i>j) return true;
-  if(s[i]!=s[j]) return false;
-  i++;j--;
-  return checkPalindrome(s,i,j);
+  if (i > j)
+    return true;
+  if (s[i] != s[j])
+    return false;
+  i++;
+  j--;
+  return checkPalindrome(s, i, j);
 }
+int exponent(int a, int b) {
+  if (b == 0)
+    return 1;
 
+  return exponent(a, --b) * a;
+}
+void PrintArray(int *arr,int n){
+  for(int i=0;i<n;i++){
+    cout<<arr[i]<<" ";
+  }
+}
+void bubbleSort(int *arr,int n){
+  int i=n;
+  while(i>=0){
+    for(int i=1;i<n;i++){
+    if(arr[i-1]>arr[i]){
+      swap(arr[i-1],arr[i]);
+    }
+  }
+  PrintArray(arr,n);
+    cout<<endl;
+    i--;
+  }
+}
+void BubblsortRecursively(int *arr,int n,int i){
+  if(n==0||n==1) return ;
+  for(int i=0;i<n;i++){
+    if(arr[i-1]>arr[i]){
+      swap(arr[i-1],arr[i]);
+    }
+  }
+  PrintArray(arr,n);
+    cout<<endl;
+  
+  // i++;
+  n--;
+  BubblsortRecursively(arr,n,i);
+  
+  
+}
 int main() {
 
   string s = "a";
@@ -95,10 +137,15 @@ int main() {
   int n = s.size() - 1;
   // recursiceTwoPivot(s, 0, n);
   // cout<<checkPalindrome(s,0,n)<<endl;
-  int a,b;
-  cin>>a>>b;
-  cout<<a<<" "<<b;
-  cout << "answer  " << s;
+  int arr[10]={12,1,10,4,4,2,3,9,7,6};
+  // int a, b;
+  // cin >> a >> b;
+  // /cout << a << " " << b << endl;
+  // int num = exponent(a, b);
+  // bubbleSort(arr,sizeof(arr)/4);
+  cout<<"using recusrsion"<<endl;
+  BubblsortRecursively(arr,sizeof(arr)/4,0);
+  cout<<"answer"<<endl;
+  PrintArray(arr,n);
+  cout << "answer  " << arr;
 }
-
-
