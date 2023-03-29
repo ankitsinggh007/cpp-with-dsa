@@ -29,35 +29,62 @@
 //   checkPalindrome(name);
 // }
 
-#include <iostream>
-#include <vector>
+// #include <iostream>
+// #include <vector>
 
+// using namespace std;
+
+// void getValue(int *arr, int n) {
+//   for (int i = 0; i < n; i++) {
+//     cin >> arr[i];
+//   }
+// }
+// void PrintArray(int *arr, int n) {
+//   for (int i = 0; i < n; i++) {
+//     cout << arr[i] << " ";
+//   }
+// }
+
+// int main() {
+//   int N, n;
+//   cout << "How many day's are for exam" << endl;
+//   cin >> N;
+//   cout << "how many  chapter are there" << endl;
+//   cin >> n;
+//   cout << "how many time each chapter take" << endl;
+
+//   int *arr = new int[n];
+//   getValue(arr, n);
+//   PrintArray(arr, n);
+//   cout<<"answer"<<ayushGivesNinjatest(N, n, arr);
+// }
+
+#include <iostream>
 using namespace std;
 
-void getValue(int *arr, int n) {
-  for (int i = 0; i < n; i++) {
-    cin >> arr[i];
+void reverse(string& s) {
+
+  int i = 0;
+  int j = s.size() - 1;
+  while (i <= j) {
+    swap(s[i], s[j]);
+    i++;
+    j--;
   }
 }
-void PrintArray(int *arr, int n) {
-  for (int i = 0; i < n; i++) {
-    cout << arr[i] << " ";
-  }
+void recursiceTwoPivot(string& s,int i,int j){
+  if(i>=j) return ;
+  swap(s[i],s[j]);
+  cout<<s<<endl;
+  recursiceTwoPivot(s,++i,--j);
 }
-
-
-
 
 int main() {
-  int N, n;
-  cout << "How many day's are for exam" << endl;
-  cin >> N;
-  cout << "how many  chapter are there" << endl;
-  cin >> n;
-  cout << "how many time each chapter take" << endl;
 
-  int *arr = new int[n];
-  getValue(arr, n);
-  PrintArray(arr, n);
-  cout<<"answer"<<ayushGivesNinjatest(N, n, arr);
+  string s = "hi my name is ankit";
+
+  // reverse(s);
+  int n=s.size()-1;
+  recursiceTwoPivot(s, 0, n);
+  cout << "answer  " << s;
 }
