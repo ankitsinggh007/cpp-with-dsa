@@ -13,6 +13,26 @@ void insertAtHead(Node *&head, int n) {
   temp->next = head;
   head = temp;
 }
+void insertAtTail(Node *&head, int n) {
+
+  Node *tail = head;
+  if (tail == NULL) {
+    Node *temp = new Node;
+    temp->data = n;
+    temp->next = head;
+    head = temp;
+    return;
+  }
+
+  while (tail->next != NULL) {
+    tail = tail->next;
+  }
+
+  Node *temp = new Node;
+  temp->data = n;
+  temp->next = NULL;
+  tail->next = temp;
+}
 void print(Node *head) {
 
   while (head != NULL) {
@@ -24,9 +44,9 @@ void print(Node *head) {
 int main() {
 
   Node *head = NULL;
-  insertAtHead(head, 7);
-  insertAtHead(head, 5);
-  insertAtHead(head, 2);
-  insertAtHead(head, 0);
+  insertAtTail(head, 7);
+  insertAtTail(head, 5);
+  insertAtTail(head, 2);
+  insertAtTail(head, 0);
   print(head);
 }
