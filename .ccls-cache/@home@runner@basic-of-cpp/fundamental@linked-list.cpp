@@ -146,3 +146,37 @@ bool detectCycle(Node *head) {
   }
   return false;
 }
+/************************************************************
+
+    Following is the linked list node structure.
+    
+    class Node 
+    {
+        public:
+        int data;
+        Node* next;
+
+        Node(int data) 
+        {
+            this->data = data;
+            this->next = NULL;
+        }
+    };
+    
+************************************************************/
+
+Node * uniqueSortedList(Node * head) {
+   if(head==NULL) return head;
+    Node*temp=head->next;
+    Node*curr=head;
+    while(temp!=NULL){
+        if(curr->data==temp->data){
+            temp=temp->next;
+            curr->next=temp;
+            continue;
+        }
+        curr=curr->next;
+        temp=temp->next;
+    }
+    return head;
+}
