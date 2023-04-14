@@ -6,7 +6,7 @@
 // // //   Node *next;
 // // // };
 
-// // // void insertAtHead(Node *&head, int n) {
+// // // void insertAtHead(Node *&head1, int n) {
 
 // // //   Node *temp = new Node;
 // // //   temp->data = n;
@@ -180,90 +180,99 @@
 //     }
 //     return head;
 // }
-# include<iostream>
+#include <iostream>
+#include <string>
 using namespace std;
 
-class Node{
+class Node {
 public:
-int data;
-Node*next;
+  int data;
+  Node *next;
 
-Node(int data){
-  this->data=data;
-  this->next=NULL;
-}
-
+  Node(int data) {
+    this->data = data;
+    this->next = NULL;
+  }
 };
 // Print LL
-void Print(Node*head){
- Node*temp=head;
-  while(temp!=NULL){
-    cout<<temp->data<<" ";
-    temp=temp->next;
+void Print(Node *head) {
+  Node *temp = head;
+  while (temp != NULL) {
+    cout << temp->data << " ";
+    temp = temp->next;
   }
 }
 // reversed in LL
 
-void reverseLinkedList(Node*&temp){
-	Node*prev=NULL;
-	Node*Curr=temp;
-	Node*Next=NULL;
-	while(Curr!=NULL){
-		Next=Curr->next;
-		Curr->next=prev;
-		prev=Curr;
-		Curr=Next;
-	}
-  temp=prev;
-  cout<<endl;
+void reverseLinkedList(Node *&temp) {
+  Node *prev = NULL;
+  Node *Curr = temp;
+  Node *Next = NULL;
+  while (Curr != NULL) {
+    Next = Curr->next;
+    Curr->next = prev;
+    prev = Curr;
+    Curr = Next;
+  }
+  temp = prev;
+  cout << endl;
 }
 // Insert at tail in LL
 
-void insertAtHead(Node*&head,int k){
+void insertAtHead(Node *&head, int k) {
 
-  if(head==NULL){
+  if (head == NULL) {
     return;
   }
-  Node*temp=new Node(k);
-  Node*tail=head;
-  while(tail->next!=NULL){
-    tail=tail->next;
+  Node *temp = new Node(k);
+  Node *tail = head;
+  while (tail->next != NULL) {
+    tail = tail->next;
   }
-  tail->next=temp;
-  
+  tail->next = temp;
 }
 // size of LL
-int length(Node*head){
-  int count=0;
-  while(head!=NULL){
-  count++;
-    head=head->next;
+int length(Node *head) {
+  int count = 0;
+  while (head != NULL) {
+    count++;
+    head = head->next;
   }
   return count;
 }
-
-int main(){
-  Node*head=new Node(0);
-  insertAtHead(head,8);
-  insertAtHead(head,5);
-  insertAtHead(head,3);
-  insertAtHead(head,37);
-  
-  insertAtHead(head,10);
-  insertAtHead(head,11);
-  insertAtHead(head,12);
-  
-  insertAtHead(head,13);
-  insertAtHead(head,14);
-  Print(head);
-  Node*temp=head;
-  
-  reverseLinkedList(temp);
-  cout<<endl;
-  Print(temp);
-  
+void reverseString(string &s) {
+  int i = 0;
+  int j = s.size() - 1;
+  while (i < j) {
+    swap(s[i], s[j]);
+  }
 }
-
-
-
-
+string ConvertInString(Node *head) {
+  string s = "";
+  Node *temp = head;
+  while (temp != NULL) {
+    s.push_back(temp->data);
+  }
+  return s;
+}
+Node *addTwoNumbers(Node *head1, Node *head2) {
+  string s1 = ConvertInString(head1);
+  string s2 = ConvertInString(head2);
+  cout << endl << s1 << " s1";
+  cout << endl << s2 << " s2";
+  reverseString(s1);
+  reverseString(s2);
+}
+int main() {
+  Node *head = new Node(5);
+  insertAtHead(head, 6);
+  insertAtHead(head, 3);
+  Node *head1 = new Node(8);
+  insertAtHead(head1, 4);
+  insertAtHead(head1, 2);
+  Print(head1);
+  Print(head);
+  string s = "256";
+  int n = stoi(s);
+  cout << n;
+}
